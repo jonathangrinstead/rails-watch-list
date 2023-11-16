@@ -1,0 +1,24 @@
+<br>
+<br>
+</nav>
+<div class="jumbotron">
+  <h1 class="display-4">Save Any Movie!</h1>
+  <p class="lead">Save any movie from your fave genres !!!</p>
+  <hr class="my-4">
+  <p>Click to add a movie genre below !</p>
+  <p class="lead">
+    <%= link_to "New List", new_list_path, class:"btn btn-primary"%>
+  </p>
+</div>
+<br>
+<br>
+<div class="row">
+  <% @lists.each do |list| %>
+    <div class="card mb-3 m-4 col-4" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <%= link_to "Go to list", list_path(list), class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
