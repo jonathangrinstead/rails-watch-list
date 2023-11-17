@@ -1,14 +1,18 @@
 <nav class="navbar navbar-light bg-light">
 <%= link_to "HomePage", lists_path, class:"btn btn-dark" %>
 <br>
-<%= link_to "Back to list", list_path(@list.id), class:"btn btn-primary" %>
+<%= link_to "Back to #{@list.name}" , list_path(@list.id), class:"btn btn-primary" %>
 </nav>
 <br>
 <br>
-<h3>Add New Bookmark</h3>
 
+<div class="container w-50">
+<h3>Add New Bookmark</h3>
+<br>
+<br>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
-  <%= f.submit %>
+  <%= f.submit class:"btn btn-primary"%>
 <% end %>
+</div>

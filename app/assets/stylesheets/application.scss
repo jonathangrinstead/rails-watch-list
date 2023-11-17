@@ -10,3 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.jumbotron {
+  background-color: rgb(155, 231, 231);
+  border-radius: 5px;
+  padding: 20px;
+}

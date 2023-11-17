@@ -2,22 +2,22 @@
 <br>
 </nav>
 <div class="jumbotron">
-  <h1 class="display-4">Save Any Movie!</h1>
+  <h1 class="display-4">Save Any Movie! 🎬🍿</h1>
   <p class="lead">Save any movie from your fave genres !!!</p>
   <hr class="my-4">
   <p>Click to add a movie genre below !</p>
   <p class="lead">
-    <%= link_to "New List", new_list_path, class:"btn btn-primary"%>
+    <%= link_to "New Genre", new_list_path, class:"btn btn-dark"%>
   </p>
 </div>
 <br>
 <br>
 <div class="row">
   <% @lists.each do |list| %>
-    <div class="card mb-3 m-4 col-4" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= list.name %></h5>
-        <%= link_to "Go to list", list_path(list), class:"btn btn-primary" %>
+    <div class="card mb-3 m-4 col-4 p-3 text-center" style="width: 18rem;">
+    <img class="card-img-top" src= <%= cl_image_path list.photo.key %> alt="Card image cap">
+      <div class="card-body p-3">
+        <%= link_to "Go to #{list.name}", list_path(list), class:"btn btn-primary" %>
       </div>
     </div>
   <% end %>
